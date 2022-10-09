@@ -119,7 +119,7 @@ const VolantisApp = (() => {
   // 校正页面定位（被导航栏挡住的区域）
   fn.scrolltoElement = (elem, correction = scrollCorrection) => {
     volantis.scroll.to(elem, {
-      top: elem.getBoundingClientRect().top + document.documentElement.scrollTop - correction
+      top: elem.offsetTop - correction
     })
   }
 
@@ -210,7 +210,6 @@ const VolantisApp = (() => {
       volantis.dom.comment.click(e => { // 评论按钮点击后 跳转到评论区域
         e.preventDefault();
         e.stopPropagation();
-        volantis.cleanContentVisibility();
         fn.scrolltoElement(volantis.dom.commentTarget);
         e.stopImmediatePropagation();
       });
@@ -235,7 +234,7 @@ const VolantisApp = (() => {
           }
           volantis.dom.toc.removeClass('active');
         });
-      } else if (volantis.dom.toc) volantis.dom.toc.style.display = 'none'; // 隐藏toc目录按钮
+      } else volantis.dom.toc.style.display = 'none'; // 隐藏toc目录按钮
     }
   }
 
@@ -516,8 +515,8 @@ const VolantisApp = (() => {
   // 消息提示：标准
   fn.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css(volantis.GLOBAL_CONFIG.cdn.izitoast_css)
-      volantis.js(volantis.GLOBAL_CONFIG.cdn.izitoast_js, () => {
+      volantis.css(volantis.GLOBAL_CONFIG.plugins.message.css)
+      volantis.js(volantis.GLOBAL_CONFIG.plugins.message.js, () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -562,8 +561,8 @@ const VolantisApp = (() => {
   // 消息提示：询问
   fn.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css(volantis.GLOBAL_CONFIG.cdn.izitoast_css)
-      volantis.js(volantis.GLOBAL_CONFIG.cdn.izitoast_js, () => {
+      volantis.css(volantis.GLOBAL_CONFIG.plugins.message.css)
+      volantis.js(volantis.GLOBAL_CONFIG.plugins.message.js, () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -623,8 +622,8 @@ const VolantisApp = (() => {
     }
 
     if (typeof iziToast === "undefined") {
-      volantis.css(volantis.GLOBAL_CONFIG.cdn.izitoast_css)
-      volantis.js(volantis.GLOBAL_CONFIG.cdn.izitoast_js, () => {
+      volantis.css(volantis.GLOBAL_CONFIG.plugins.message.css)
+      volantis.js(volantis.GLOBAL_CONFIG.plugins.message.js, () => {
         hideMessage(done);
       });
     } else {
@@ -704,8 +703,8 @@ const VolantisFancyBox = (() => {
   const fn = {};
 
   fn.loadFancyBox = (done) => {
-    volantis.css(volantis.GLOBAL_CONFIG.cdn.fancybox_css);
-    volantis.js(volantis.GLOBAL_CONFIG.cdn.fancybox_js).then(() => {
+    volantis.css(volantis.GLOBAL_CONFIG.plugins.fancybox.css);
+    volantis.js(volantis.GLOBAL_CONFIG.plugins.fancybox.js).then(() => {
       if (done) done();
     })
   }
