@@ -1903,7 +1903,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665300719055),
+    lastupdate: new Date(1669858430588),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2651,6 +2651,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+          
+        
       
     
     
@@ -2658,7 +2662,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://plus-l.github.io/2022/10/09/面向对象你不知道对象是什么？/">
+  <link itemprop="mainEntityOfPage" href="http://plus-l.github.io/2022/12/01/Princeton-Algorithm-I-第一周-Union-Find（并查集）学习记录/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="PlusL">
   </span>
@@ -2676,21 +2680,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"  itemprop="url">
-        Oct 9, 2022
+      <a href="/2022/12/01/Princeton-Algorithm-I-%E7%AC%AC%E4%B8%80%E5%91%A8-Union-Find%EF%BC%88%E5%B9%B6%E6%9F%A5%E9%9B%86%EF%BC%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"  itemprop="url">
+        Princeton Algorithm I 第一周  Union-Find（并查集）学习记录
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-面向对象你不知道对象是什么？不会吧不会吧，不会真有人用了这么久面向对象语言还不知道对象是个啥吧😏
-一、对象的组成对象由：对象头、实例数据、填充字节填充字节就不谈了，就是补充空字节满足Java对象必须是8byte的倍数。
-来来来，大的要来了😱
-
-ClassPointer：很好理解，他指向了当前对象类型所在方法区中的类型数据（也就是跑到方法区去找这个对象到底是啥类型）
-方法区在JDK 1....
+        0. Overviewhttps://www.coursera.org/learn/algorithms-part1/supplement/aYr6R/overviewWe begin our study of algorithms with a motivating example and an overview of the use of the scientific method fo...
       
     
   </div>
@@ -2698,12 +2696,130 @@ ClassPointer：很好理解，他指向了当前对象类型所在方法区中�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-09T10:13:24+08:00">2022-10-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-12-01T09:32:47+08:00">2022-12-01</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/' itemprop="url">
+          <a class='readmore' href='/2022/12/01/Princeton-Algorithm-I-%E7%AC%AC%E4%B8%80%E5%91%A8-Union-Find%EF%BC%88%E5%B9%B6%E6%9F%A5%E9%9B%86%EF%BC%89%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://plus-l.github.io/2022/12/01/面向对象你不知道对象是什么？/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PlusL">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PlusL">
+    <meta itemprop="description" content="PlusL个人博客，主要用作学习生活记录分享，欢迎~">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/01/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"  itemprop="url">
+        面向对象你不知道对象是什么？
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        不会真有人用了这么久面向对象语言还不知道对象是个啥吧（doge😏
+一、对象的组成对象由：对象头、实例数据、填充字节填充字节就不谈了，就是补充空字节满足Java对象必须是8byte的倍数。
+来来来，大的要来了😱
+
+ClassPointer：很好理解，他指向了当前对象类型所在方法区中的类型数据（也就是跑到方法区去找这个对象到底是啥类型）
+方法区在JDK 1.8后移至元空间（MetaSpace...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-01T09:30:15+08:00">2022-12-01</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/01/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://plus-l.github.io/2022/12/01/操作系统（大合集，有点杂）/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="PlusL">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="PlusL">
+    <meta itemprop="description" content="PlusL个人博客，主要用作学习生活记录分享，欢迎~">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%A4%A7%E5%90%88%E9%9B%86%EF%BC%8C%E6%9C%89%E7%82%B9%E6%9D%82%EF%BC%89/"  itemprop="url">
+        操作系统（大合集，有点杂）
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+操作系统、计算机网络这块还是得看林哥「小林coding」 https://xiaolincoding.com/os/
+
+零、计算机结构1. 冯诺依曼计算机模型现代计算机模型是基于-冯诺依曼计算机模型计算机在运行时，先从内存中取出第一条指令，通过控制器的译码，按指令的要求，从存储器中取出数据进行指定的运算和逻辑操作等加工，然后再按地址把结果送到内存中去，接下来，再取出第二条指令，在控制器的指...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-01T09:30:15+08:00">2022-12-01</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%A4%A7%E5%90%88%E9%9B%86%EF%BC%8C%E6%9C%89%E7%82%B9%E6%9D%82%EF%BC%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2865,6 +2981,21 @@ Hello WorldWelcome to Hexo! This is your very first post. Check documentation fo
     
     
       
+  
+  <section class="widget tagcloud desktop mobile pjax">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/DataStructure-and-Algorithm-Princeton-Algorithm/" style="font-size: 14px; color: #999">DataStructure and Algorithm , Princeton Algorithm</a> <a href="/tags/Operating-System/" style="font-size: 24px; color: #555">Operating System</a>
+    </div>
+  </section>
+
 
     
   
